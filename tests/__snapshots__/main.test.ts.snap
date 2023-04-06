@@ -1,0 +1,897 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Parses a XMLTV file > Fully parses to a JS object 1`] = `
+{
+  "channels": [
+    {
+      "displayName": [
+        {
+          "_value": "Channel One",
+          "lang": "en",
+        },
+      ],
+      "icon": [
+        {
+          "height": 100,
+          "src": "https://example.com/channel_one_icon.jpg",
+          "width": 100,
+        },
+      ],
+      "id": "channel_one",
+      "url": [
+        {
+          "_value": "https://example.com/channel_one",
+          "system": "example",
+        },
+        {
+          "_value": "https://example.com/channel_one_alternate",
+          "system": "other_system",
+        },
+      ],
+    },
+    {
+      "displayName": [
+        {
+          "_value": "Channel Two: Minimum valid channel",
+        },
+      ],
+      "id": "channel_two",
+    },
+  ],
+  "date": 2022-04-01T00:00:00.000Z,
+  "generatorInfoName": "Example Generator",
+  "generatorInfoUrl": "example generator url",
+  "programmes": [
+    {
+      "audio": {
+        "present": true,
+        "stereo": "Dolby Digital",
+      },
+      "category": [
+        {
+          "_value": "Crime",
+          "lang": "en",
+        },
+        {
+          "_value": "Drama",
+          "lang": "en",
+        },
+      ],
+      "channel": "channel_one",
+      "clumpidx": "0/1",
+      "country": {
+        "_value": "US",
+      },
+      "credits": {
+        "actor": [
+          {
+            "_value": "David Thompson",
+            "role": "Walter Johnson",
+          },
+          {
+            "_value": "Ryan Lee",
+            "guest": true,
+            "image": [
+              {
+                "_value": "https://www.example.com/xxx.jpg",
+                "type": "person",
+              },
+            ],
+            "role": "Karl James",
+            "url": [
+              {
+                "_value": "https://www.example.com/person/204",
+                "system": "moviedb",
+              },
+            ],
+          },
+        ],
+        "adapter": [
+          {
+            "_value": "William Brown",
+          },
+        ],
+        "commentator": [
+          {
+            "_value": "James Wilson",
+          },
+        ],
+        "composer": [
+          {
+            "_value": "Max Wright",
+          },
+        ],
+        "director": [
+          {
+            "_value": "Samuel Jones",
+          },
+        ],
+        "editor": [
+          {
+            "_value": "Nora Peterson",
+          },
+        ],
+        "guest": [
+          {
+            "_value": "Lucas Martin",
+          },
+          {
+            "_value": "Emily Parker",
+          },
+          {
+            "_value": "Oliver Nelson",
+          },
+        ],
+        "presenter": [
+          {
+            "_value": "Amanda Johnson",
+          },
+        ],
+        "producer": [
+          {
+            "_value": "Emily Davis",
+          },
+        ],
+        "writer": [
+          {
+            "_value": "Samuel Jones",
+          },
+        ],
+      },
+      "date": 2022-04-01T00:00:00.000Z,
+      "desc": [
+        {
+          "_value": "This programme entry showcases all possible features of the DTD",
+          "lang": "en",
+        },
+      ],
+      "episodeNum": [
+        {
+          "_value": "S01E01",
+          "system": "onscreen",
+        },
+        {
+          "_value": "1.1.",
+          "system": "xmltv_ns",
+        },
+      ],
+      "icon": [
+        {
+          "height": 100,
+          "src": "https://example.com/programme_one_icon.jpg",
+          "width": 100,
+        },
+      ],
+      "image": [
+        {
+          "_value": "https://tvdb.com/programme_one_poster_1.jpg",
+          "orient": "P",
+          "size": 1,
+          "system": "tvdb",
+          "type": "poster",
+        },
+        {
+          "_value": "https://tvdb.com/programme_one_backdrop_3.jpg",
+          "orient": "L",
+          "size": 3,
+          "system": "tvdb",
+          "type": "backdrop",
+        },
+      ],
+      "keyword": [
+        {
+          "_value": "methamphetamine",
+          "lang": "en",
+        },
+        {
+          "_value": "cancer",
+          "lang": "en",
+        },
+      ],
+      "language": {
+        "_value": "English",
+      },
+      "lastChance": {
+        "_value": "Last time on this channel",
+        "lang": "en",
+      },
+      "length": {
+        "_value": 60,
+        "units": "minutes",
+      },
+      "new": true,
+      "origLanguage": {
+        "_value": "French",
+        "lang": "en",
+      },
+      "pdcStart": 2022-03-31T18:00:00.000Z,
+      "premiere": {
+        "_value": "First time on British TV",
+      },
+      "previouslyShown": {
+        "channel": "channel_two",
+        "start": 2022-03-31T18:00:00.000Z,
+      },
+      "rating": [
+        {
+          "icon": [
+            {
+              "src": "15_symbol.png",
+            },
+          ],
+          "system": "BBFC",
+          "value": "15",
+        },
+      ],
+      "review": [
+        {
+          "_value": "This is a fantastic show!",
+          "lang": "en",
+          "reviewer": "Joe Bloggs",
+          "source": "Rotten Tomatoes",
+          "type": "text",
+        },
+        {
+          "_value": "https://example.com/programme_one_review",
+          "lang": "en",
+          "reviewer": "Joe Bloggs",
+          "source": "Rotten Tomatoes",
+          "type": "url",
+        },
+      ],
+      "showview": "12345",
+      "starRating": [
+        {
+          "icon": [
+            {
+              "src": "stars.png",
+            },
+          ],
+          "system": "TV Guide",
+          "value": "4/5",
+        },
+      ],
+      "start": 2022-03-31T18:00:00.000Z,
+      "stop": 2022-03-31T19:00:00.000Z,
+      "subTitle": [
+        {
+          "_value": "Pilot",
+          "lang": "en",
+        },
+      ],
+      "subtitles": [
+        {
+          "language": {
+            "_value": "English",
+          },
+          "type": "teletext",
+        },
+        {
+          "language": {
+            "_value": "Spanish",
+            "lang": "en",
+          },
+          "type": "onscreen",
+        },
+      ],
+      "title": [
+        {
+          "_value": "Programme One",
+          "lang": "en",
+        },
+      ],
+      "url": [
+        {
+          "_value": "https://example.com/programme_one",
+          "system": "tvdb",
+        },
+        {
+          "_value": "https://example.com/programme_one_2",
+        },
+      ],
+      "video": {
+        "aspect": "16:9",
+        "colour": false,
+        "present": true,
+        "quality": "HDTV",
+      },
+      "videoplus": "67890",
+      "vpsStart": 2022-03-31T18:00:00.000Z,
+    },
+    {
+      "channel": "channel_one",
+      "start": 2022-03-31T18:00:00.000Z,
+      "title": [
+        {
+          "_value": "Programme Two: The minimum valid programme",
+        },
+      ],
+    },
+  ],
+  "sourceDataUrl": "example.com/a",
+  "sourceInfoName": "example",
+  "sourceInfoUrl": "example.com",
+}
+`;
+
+exports[`Parses a XMLTV file > it can convert an object into the dom structure 1`] = `
+[
+  {
+    "attributes": {
+      "date": "20220401000000 +0000",
+      "generator-info-name": "Example Generator",
+      "generator-info-url": "example generator url",
+      "source-data-url": "example.com/a",
+      "source-info-name": "example",
+      "source-info-url": "example.com",
+    },
+    "children": [
+      {
+        "attributes": {
+          "id": "channel_one",
+        },
+        "children": [
+          {
+            "attributes": {
+              "lang": "en",
+            },
+            "children": [
+              "Channel One",
+            ],
+            "tagName": "display-name",
+          },
+          {
+            "attributes": {
+              "height": "100",
+              "src": "https://example.com/channel_one_icon.jpg",
+              "width": "100",
+            },
+            "children": [],
+            "tagName": "icon",
+          },
+          {
+            "attributes": {
+              "system": "example",
+            },
+            "children": [
+              "https://example.com/channel_one",
+            ],
+            "tagName": "url",
+          },
+          {
+            "attributes": {
+              "system": "other_system",
+            },
+            "children": [
+              "https://example.com/channel_one_alternate",
+            ],
+            "tagName": "url",
+          },
+        ],
+        "tagName": "channel",
+      },
+      {
+        "attributes": {
+          "id": "channel_two",
+        },
+        "children": [
+          {
+            "attributes": {},
+            "children": [
+              "Channel Two: Minimum valid channel",
+            ],
+            "tagName": "display-name",
+          },
+        ],
+        "tagName": "channel",
+      },
+      {
+        "attributes": {
+          "channel": "channel_one",
+          "clumpidx": "0/1",
+          "pdc-start": "20220331180000 +0000",
+          "showview": "12345",
+          "start": "20220331180000 +0000",
+          "stop": "20220331190000 +0000",
+          "videoplus": "67890",
+          "vps-start": "20220331180000 +0000",
+        },
+        "children": [
+          {
+            "attributes": {
+              "lang": "en",
+            },
+            "children": [
+              "Programme One",
+            ],
+            "tagName": "title",
+          },
+          {
+            "attributes": {
+              "lang": "en",
+            },
+            "children": [
+              "Pilot",
+            ],
+            "tagName": "sub-title",
+          },
+          {
+            "attributes": {
+              "lang": "en",
+            },
+            "children": [
+              "This programme entry showcases all possible features of the DTD",
+            ],
+            "tagName": "desc",
+          },
+          {
+            "attributes": {},
+            "children": [
+              {
+                "attributes": {},
+                "children": [
+                  "Samuel Jones",
+                ],
+                "tagName": "director",
+              },
+              {
+                "attributes": {
+                  "role": "Walter Johnson",
+                },
+                "children": [
+                  "David Thompson",
+                ],
+                "tagName": "actor",
+              },
+              {
+                "attributes": {
+                  "guest": "yes",
+                  "role": "Karl James",
+                },
+                "children": [
+                  "Ryan Lee",
+                  {
+                    "attributes": {
+                      "type": "person",
+                    },
+                    "children": [
+                      "https://www.example.com/xxx.jpg",
+                    ],
+                    "tagName": "image",
+                  },
+                  {
+                    "attributes": {
+                      "system": "moviedb",
+                    },
+                    "children": [
+                      "https://www.example.com/person/204",
+                    ],
+                    "tagName": "url",
+                  },
+                ],
+                "tagName": "actor",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "Samuel Jones",
+                ],
+                "tagName": "writer",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "William Brown",
+                ],
+                "tagName": "adapter",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "Emily Davis",
+                ],
+                "tagName": "producer",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "Max Wright",
+                ],
+                "tagName": "composer",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "Nora Peterson",
+                ],
+                "tagName": "editor",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "Amanda Johnson",
+                ],
+                "tagName": "presenter",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "James Wilson",
+                ],
+                "tagName": "commentator",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "Lucas Martin",
+                ],
+                "tagName": "guest",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "Emily Parker",
+                ],
+                "tagName": "guest",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "Oliver Nelson",
+                ],
+                "tagName": "guest",
+              },
+            ],
+            "tagName": "credits",
+          },
+          {
+            "attributes": {},
+            "children": [
+              "20220401000000 +0000",
+            ],
+            "tagName": "date",
+          },
+          {
+            "attributes": {
+              "lang": "en",
+            },
+            "children": [
+              "Crime",
+            ],
+            "tagName": "category",
+          },
+          {
+            "attributes": {
+              "lang": "en",
+            },
+            "children": [
+              "Drama",
+            ],
+            "tagName": "category",
+          },
+          {
+            "attributes": {
+              "lang": "en",
+            },
+            "children": [
+              "methamphetamine",
+            ],
+            "tagName": "keyword",
+          },
+          {
+            "attributes": {
+              "lang": "en",
+            },
+            "children": [
+              "cancer",
+            ],
+            "tagName": "keyword",
+          },
+          {
+            "attributes": {},
+            "children": [
+              "English",
+            ],
+            "tagName": "language",
+          },
+          {
+            "attributes": {
+              "lang": "en",
+            },
+            "children": [
+              "French",
+            ],
+            "tagName": "orig-language",
+          },
+          {
+            "attributes": {
+              "units": "minutes",
+            },
+            "children": [
+              "60",
+            ],
+            "tagName": "length",
+          },
+          {
+            "attributes": {
+              "height": "100",
+              "src": "https://example.com/programme_one_icon.jpg",
+              "width": "100",
+            },
+            "children": [],
+            "tagName": "icon",
+          },
+          {
+            "attributes": {
+              "system": "tvdb",
+            },
+            "children": [
+              "https://example.com/programme_one",
+            ],
+            "tagName": "url",
+          },
+          {
+            "attributes": {},
+            "children": [
+              "https://example.com/programme_one_2",
+            ],
+            "tagName": "url",
+          },
+          {
+            "attributes": {},
+            "children": [
+              "US",
+            ],
+            "tagName": "country",
+          },
+          {
+            "attributes": {
+              "system": "onscreen",
+            },
+            "children": [
+              "S01E01",
+            ],
+            "tagName": "episode-num",
+          },
+          {
+            "attributes": {
+              "system": "xmltv_ns",
+            },
+            "children": [
+              "1.1.",
+            ],
+            "tagName": "episode-num",
+          },
+          {
+            "attributes": {},
+            "children": [
+              {
+                "attributes": {},
+                "children": [
+                  "yes",
+                ],
+                "tagName": "present",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "no",
+                ],
+                "tagName": "colour",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "16:9",
+                ],
+                "tagName": "aspect",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "HDTV",
+                ],
+                "tagName": "quality",
+              },
+            ],
+            "tagName": "video",
+          },
+          {
+            "attributes": {},
+            "children": [
+              {
+                "attributes": {},
+                "children": [
+                  "yes",
+                ],
+                "tagName": "present",
+              },
+              {
+                "attributes": {},
+                "children": [
+                  "Dolby Digital",
+                ],
+                "tagName": "stereo",
+              },
+            ],
+            "tagName": "audio",
+          },
+          {
+            "attributes": {
+              "channel": "channel_two",
+              "start": "20220331180000 +0000",
+            },
+            "children": [],
+            "tagName": "previously-shown",
+          },
+          {
+            "attributes": {},
+            "children": [
+              "First time on British TV",
+            ],
+            "tagName": "premiere",
+          },
+          {
+            "attributes": {
+              "lang": "en",
+            },
+            "children": [
+              "Last time on this channel",
+            ],
+            "tagName": "last-chance",
+          },
+          {
+            "attributes": {},
+            "children": [],
+            "tagName": "new",
+          },
+          {
+            "attributes": {
+              "type": "teletext",
+            },
+            "children": [
+              {
+                "attributes": {},
+                "children": [
+                  "English",
+                ],
+                "tagName": "language",
+              },
+            ],
+            "tagName": "subtitles",
+          },
+          {
+            "attributes": {
+              "type": "onscreen",
+            },
+            "children": [
+              {
+                "attributes": {
+                  "lang": "en",
+                },
+                "children": [
+                  "Spanish",
+                ],
+                "tagName": "language",
+              },
+            ],
+            "tagName": "subtitles",
+          },
+          {
+            "attributes": {
+              "system": "BBFC",
+            },
+            "children": [
+              {
+                "attributes": {},
+                "children": [
+                  "15",
+                ],
+                "tagName": "value",
+              },
+              {
+                "attributes": {
+                  "src": "15_symbol.png",
+                },
+                "children": [],
+                "tagName": "icon",
+              },
+            ],
+            "tagName": "rating",
+          },
+          {
+            "attributes": {
+              "system": "TV Guide",
+            },
+            "children": [
+              {
+                "attributes": {},
+                "children": [
+                  "4/5",
+                ],
+                "tagName": "value",
+              },
+              {
+                "attributes": {
+                  "src": "stars.png",
+                },
+                "children": [],
+                "tagName": "icon",
+              },
+            ],
+            "tagName": "star-rating",
+          },
+          {
+            "attributes": {
+              "lang": "en",
+              "reviewer": "Joe Bloggs",
+              "source": "Rotten Tomatoes",
+              "type": "text",
+            },
+            "children": [
+              "This is a fantastic show!",
+            ],
+            "tagName": "review",
+          },
+          {
+            "attributes": {
+              "lang": "en",
+              "reviewer": "Joe Bloggs",
+              "source": "Rotten Tomatoes",
+              "type": "url",
+            },
+            "children": [
+              "https://example.com/programme_one_review",
+            ],
+            "tagName": "review",
+          },
+          {
+            "attributes": {
+              "orient": "P",
+              "size": "1",
+              "system": "tvdb",
+              "type": "poster",
+            },
+            "children": [
+              "https://tvdb.com/programme_one_poster_1.jpg",
+            ],
+            "tagName": "image",
+          },
+          {
+            "attributes": {
+              "orient": "L",
+              "size": "3",
+              "system": "tvdb",
+              "type": "backdrop",
+            },
+            "children": [
+              "https://tvdb.com/programme_one_backdrop_3.jpg",
+            ],
+            "tagName": "image",
+          },
+        ],
+        "tagName": "programme",
+      },
+      {
+        "attributes": {
+          "channel": "channel_one",
+          "start": "20220331180000 +0000",
+        },
+        "children": [
+          {
+            "attributes": {},
+            "children": [
+              "Programme Two: The minimum valid programme",
+            ],
+            "tagName": "title",
+          },
+        ],
+        "tagName": "programme",
+      },
+    ],
+    "tagName": "tv",
+  },
+]
+`;
+
+exports[`Parses a XMLTV file > it can convert back to xml 1`] = `"<?xml version=\\"1.0\\" encoding=\\"UTF-8\\"?><!DOCTYPE tv SYSTEM \\"xmltv.dtd\\"><tv date=\\"20220401000000 +0000\\" source-info-name=\\"example\\" source-info-url=\\"example.com\\" source-data-url=\\"example.com/a\\" generator-info-name=\\"Example Generator\\" generator-info-url=\\"example generator url\\"><channel id=\\"channel_one\\"><display-name lang=\\"en\\">Channel One</display-name><icon src=\\"https://example.com/channel_one_icon.jpg\\" width=\\"100\\" height=\\"100\\"/><url system=\\"example\\">https://example.com/channel_one</url><url system=\\"other_system\\">https://example.com/channel_one_alternate</url></channel><channel id=\\"channel_two\\"><display-name>Channel Two: Minimum valid channel</display-name></channel><programme start=\\"20220331180000 +0000\\" stop=\\"20220331190000 +0000\\" channel=\\"channel_one\\" pdc-start=\\"20220331180000 +0000\\" vps-start=\\"20220331180000 +0000\\" showview=\\"12345\\" videoplus=\\"67890\\" clumpidx=\\"0/1\\"><title lang=\\"en\\">Programme One</title><sub-title lang=\\"en\\">Pilot</sub-title><desc lang=\\"en\\">This programme entry showcases all possible features of the DTD</desc><credits><director>Samuel Jones</director><actor role=\\"Walter Johnson\\">David Thompson</actor><actor role=\\"Karl James\\" guest=\\"yes\\">Ryan Lee<image type=\\"person\\">https://www.example.com/xxx.jpg</image><url system=\\"moviedb\\">https://www.example.com/person/204</url></actor><writer>Samuel Jones</writer><adapter>William Brown</adapter><producer>Emily Davis</producer><composer>Max Wright</composer><editor>Nora Peterson</editor><presenter>Amanda Johnson</presenter><commentator>James Wilson</commentator><guest>Lucas Martin</guest><guest>Emily Parker</guest><guest>Oliver Nelson</guest></credits><date>20220401000000 +0000</date><category lang=\\"en\\">Crime</category><category lang=\\"en\\">Drama</category><keyword lang=\\"en\\">methamphetamine</keyword><keyword lang=\\"en\\">cancer</keyword><language>English</language><orig-language lang=\\"en\\">French</orig-language><length units=\\"minutes\\">60</length><icon src=\\"https://example.com/programme_one_icon.jpg\\" width=\\"100\\" height=\\"100\\"/><url system=\\"tvdb\\">https://example.com/programme_one</url><url>https://example.com/programme_one_2</url><country>US</country><episode-num system=\\"onscreen\\">S01E01</episode-num><episode-num system=\\"xmltv_ns\\">1.1.</episode-num><video><present>yes</present><colour>no</colour><aspect>16:9</aspect><quality>HDTV</quality></video><audio><present>yes</present><stereo>Dolby Digital</stereo></audio><previously-shown start=\\"20220331180000 +0000\\" channel=\\"channel_two\\"/><premiere>First time on British TV</premiere><last-chance lang=\\"en\\">Last time on this channel</last-chance><new/><subtitles type=\\"teletext\\"><language>English</language></subtitles><subtitles type=\\"onscreen\\"><language lang=\\"en\\">Spanish</language></subtitles><rating system=\\"BBFC\\"><value>15</value><icon src=\\"15_symbol.png\\"/></rating><star-rating system=\\"TV Guide\\"><value>4/5</value><icon src=\\"stars.png\\"/></star-rating><review type=\\"text\\" source=\\"Rotten Tomatoes\\" reviewer=\\"Joe Bloggs\\" lang=\\"en\\">This is a fantastic show!</review><review type=\\"url\\" source=\\"Rotten Tomatoes\\" reviewer=\\"Joe Bloggs\\" lang=\\"en\\">https://example.com/programme_one_review</review><image type=\\"poster\\" size=\\"1\\" orient=\\"P\\" system=\\"tvdb\\">https://tvdb.com/programme_one_poster_1.jpg</image><image type=\\"backdrop\\" size=\\"3\\" orient=\\"L\\" system=\\"tvdb\\">https://tvdb.com/programme_one_backdrop_3.jpg</image></programme><programme start=\\"20220331180000 +0000\\" channel=\\"channel_one\\"><title>Programme Two: The minimum valid programme</title></programme></tv>"`;

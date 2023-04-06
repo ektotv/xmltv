@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv>
+  <channel id="1">
+    <display-name>Channel 1</display-name>
+  </channel>
+</tv>
