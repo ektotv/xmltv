@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv>
+  <channel id="channel_one">
+    <display-name>Channel One</display-name>
+  </channel>
+  <programme start="20220331150000" stop="20220331160000" channel="channel_one">
+    <title>Breaking Bad
+  </programme>
+</tv>

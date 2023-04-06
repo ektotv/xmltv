@@ -1,0 +1,9 @@
+<tv>
+  <channel id="channel_one">
+    <display-name>Channel One</display-name>
+  </channel>
+  <programme start="20220331180000 +0300" stop="20220331190000 +0300" channel="channel_one">
+    <!-- testing comment support -->
+    <title>Breaking Bad</title>
+  </programme>
+</tv>
