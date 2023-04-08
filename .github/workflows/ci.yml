@@ -57,13 +57,14 @@ jobs:
 
   tests:
     name: Tests
+    id: tests
     timeout-minutes: 5
     runs-on: ubuntu-latest
     needs: [build]
     steps:
       - uses: actions/checkout@v3
       - uses: NullVoxPopuli/action-setup-pnpm@v2
-      - run: pnpm run test:ci
+      - run: pnpm run test
       - name: Get Coverage for badge
         run: |
           # var SUMMARY = [
@@ -78,7 +79,7 @@ jobs:
           # ];
           # SUMMARY = SUMMARY.split('\n')[5]; // 'Lines        : 31.93% ( 38/119 )'
           # SUMMARY = SUMMARY.split(':')[1].split('(')[0].trim(); // '31.93%'
-          SUMMARY="$(npm run test-ci | tail -2 | head -1)"
+          SUMMARY="$(pnpm run test:ci | tail -2 | head -1)"
           TOKENS=($SUMMARY)
           # process.env.COVERAGE = '31.93%';
           echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
