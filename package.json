@@ -1,7 +1,7 @@
 {
   "name": "@iptv/xmltv",
   "description": "An extremely fast XMLTV parser and generator for Node and the browser.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": {
     "name": "ekto",
@@ -40,8 +40,8 @@
     "build": "vite build",
     "lint": "tsc",
     "test": "vitest",
-    "test:ci": "vitest --run",
     "coverage": "vitest run --coverage",
+    "test:ci": "vitest --run --coverage.enabled --coverage.reporter='text-summary'",
     "benchmark": "vitest bench",
     "benny": "ts-node --esm ./benchmark/benchmark.ts",
     "nanobench": "ts-node --esm ./benchmark/nanobench.ts",
