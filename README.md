@@ -562,28 +562,28 @@ The speed of this library is down to the implementation of the XML DOM tree pars
       <td></td>
       <th align="left">@iptv/xmltv</th>
       <td align="right">21,219</td>
-      <td align="right">±0.28</td>
+      <td align="right">±0.28%</td>
     </tr>
     <tr>
-      <td>🟢</td>
+      <th>🟢</th>
       <th align="left">@iptv/xmltv (DOM only)</th>
       <td align="right">34,632</td>
       <td align="right">±0.28%</td>
     </tr>
     <tr>
-      <td></td>
+      <th></th>
       <th align="left">fast-xml-parser</th>
       <td align="right">6,803</td>
       <td align="right">±0.53%</td>
     </tr>
     <tr>
-      <td></td>
+      <th>🔴</th>
       <th align="left">epg-parser</th>
       <td align="right">2,321</td>
       <td align="right">±0.42%</td>
     </tr>
     <tr>
-      <td>🔴</td>
+      <th></th>
       <th align="left">xmltv</th>
       <td align="right">2,448</td>
       <td align="right">±1.90%</td>
