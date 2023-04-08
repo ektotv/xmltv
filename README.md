@@ -1,23 +1,25 @@
 <div align="center">
-
   <picture>
-    <img src="logo.svg" alt="XMLTV. TypeScript tools for working with EPG data." width="500">
+    <source media="(prefers-color-scheme: dark)" srcset="./logo-dark.svg">
+    <img alt="XMLTV. TypeScript tools for working with EPG data." src="./logo.svg">
   </picture>
 
 # @iptv/xmltv
 
-[![npm](https://img.shields.io/npm/v/@iptv/xmltv?style=flat-square)](https://www.npmjs.com/package/@iptv/xmltv)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ektotv/xmltv/ci.yml?branch=main&style=flat-square)](https://github.com/ektotv/xmltv/actions/workflows/ci.yml)
-[![Codecov](https://img.shields.io/codecov/c/github/ektotv/xmltv?style=flat-square)](https://codecov.io/gh/ektotv/xmltv)
-[![GitHub](https://img.shields.io/github/license/ektotv/xmltv?style=flat-square)](LICENSE.md)
-
 An extremely fast XMLTV parser and generator for Node and the browser. <br>Lightweight, dependency-free, and easy to use.
 
-<br>
+---
 
-XMLTV files are often sizeable, with smaller ones around 20MB and larger ones exceeding hundreds of megabytes. The purpose of this library is to facilitate rapid parsing and creation of these files.
+[![npm](https://img.shields.io/npm/v/@iptv/xmltv?style=flat-square)](https://www.npmjs.com/package/@iptv/xmltv)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ektotv/xmltv/ci.yml?branch=main&style=flat-square)](https://github.com/ektotv/xmltv/actions/workflows/ci.yml)
+[![Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/evoactivity/4b433bda8a479155a5a36b1a8341b97c/raw/iptv_xmltv_coverage.json&style=flat-square)](https://github.com/ektotv/xmltv/tree/main/tests)
+[![GitHub](https://img.shields.io/github/license/ektotv/xmltv?style=flat-square)](LICENSE.md)
 
 </div>
+
+---
+
+The average XMLTV file is pretty large, smaller ones around 20MB and larger ones exceeding hundreds of megabytes. The purpose of this library is to facilitate rapid parsing and creation of these files.
 
 ---
 
