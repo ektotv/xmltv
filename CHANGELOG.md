@@ -1,5 +1,11 @@
 # @iptv/xmltv
 
+## 0.1.2
+
+### Patch Changes
+
+- Fix error in readme example
+
 ## 0.1.1
 
 ### Patch Changes

@@ -58,7 +58,7 @@ yarn add @iptv/xmltv
 To use this library in your project, first import the functions you need:
 
 ```typescript
-import { parseXmltv, parseXmltv } from "@iptv/xmltv";
+import { parseXmltv, writeXmltv } from "@iptv/xmltv";
 ```
 
 Then, you can parse an XMLTV file and receive back an `Xmltv` object:
@@ -490,12 +490,18 @@ const channels: XmltvChannel[] = xmltv.channels;
 
 </details>
 
-You can also generate an XMLTV file from an Xmltv DOM tree:
+You can also generate an XMLTV file from an `Xmltv` tree:
 
 ```typescript
-const dom = objectToDom(xmltvObject);
-const xml = parseXmltv(dom);
-console.log(xml); //<tv>
+const xml = writeXmltv(xmltvObject);
+console.log(xml); // <tv>...</tv>
+```
+
+Or from a XMLTV DOM tree:
+
+```typescript
+const xml = writeXmltv(xmltvDom, { fromDom: true });
+console.log(xml); // <tv>...</tv>
 ```
 
 If you want to go even faster you can parse the file into a DOM tree and then traverse it yourself:
@@ -503,7 +509,7 @@ If you want to go even faster you can parse the file into a DOM tree and then tr
 ```typescript
 const xml = "..."; // XMLTV file contents
 const parsed = parseXmltv(xml, { asDom: true });
-// or import {parser} from '@iptv/xmltv';
+// or import { parser } from '@iptv/xmltv';
 // const parsed = parser(xml);
 
 // `parsed` is now a list of XmltvNode objects
@@ -536,7 +542,7 @@ const programmes = parsed
 
 ## ⚡ Performance
 
-This library has been optimized for parsing and generating XMLTV files quickly and efficiently. In our benchmarks, it performs better than other popular XMLTV libraries, including [epg-parser](https://www.npmjs.com/package/epg-parser) and [xmltv](https://www.npmjs.com/package/xmltv). It also beats [fast-xml-parser](https://www.npmjs.com/package/fast-xml-parser).
+This library has been optimized for parsing and generating XMLTV files quickly and efficiently. In my benchmarks, it performs better than other popular XMLTV libraries, including [epg-parser](https://www.npmjs.com/package/epg-parser) and [xmltv](https://www.npmjs.com/package/xmltv). It also beats [fast-xml-parser](https://www.npmjs.com/package/fast-xml-parser).
 
 The speed of this library is down to the implementation of the XML DOM tree parser [tXml](https://www.npmjs.com/package/txml). To learn more about the optimisations made by tXml please read [this blog post](https://tnickel.de/2020/08/30/2020-08-how-the-fastest-xml-parser-is-build/) by [@TobiasNickel](https://github.com/TobiasNickel).
 
@@ -559,7 +565,7 @@ The speed of this library is down to the implementation of the XML DOM tree pars
   </thead>
   <tbody>
     <tr>
-      <td></td>
+      <th></th>
       <th align="left">@iptv/xmltv</th>
       <td align="right">21,219</td>
       <td align="right">±0.28%</td>
