@@ -1,5 +1,11 @@
 # @iptv/xmltv
 
+## 0.1.3
+
+### Patch Changes
+
+- [`7b342c0`](https://github.com/ektotv/xmltv/commit/7b342c09c84f29a3c724c3245395315fbf99272e) Thanks [@evoactivity](https://github.com/evoactivity)! - Readme updates and tsconfig fix for node type resolution
+
 ## 0.1.2
 
 ### Patch Changes
