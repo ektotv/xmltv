@@ -27,4 +27,3 @@ coverage
 benchmark/results
 tests/fixtures/c*-p*.xml
 
-tests/fixtures/files.ts
