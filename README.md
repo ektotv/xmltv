@@ -713,7 +713,7 @@ The shape of the `Xmltv` type is designed to match the [XMLTV DTD](https://raw.g
 
 Contributions are welcome! Even better if they align with the [future goals](#-future-goals).
 
-You'll need to be able to run the tests and benchmarks. To do so, you will need to run the `./create-xml.sh` script in the `tests/fixtures` directory to generate the necessary fixture files.
+You'll need to be able to run the tests and benchmarks. To do so, you will need to run the `./create-fixtures.sh` script in the `tests/fixtures` directory to generate the necessary fixture files.
 
 To be accepted your PR must pass all tests and not negatively impact the benchmarks. Some commands to help you:
 
