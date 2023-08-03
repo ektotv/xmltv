@@ -1,5 +1,11 @@
 # @iptv/xmltv
 
+## 0.1.4
+
+### Patch Changes
+
+- [#3](https://github.com/ektotv/xmltv/pull/3) [`762eb3c`](https://github.com/ektotv/xmltv/commit/762eb3c83caa3f3a317a5639f95b5fdba9590a98) Thanks [@evoactivity](https://github.com/evoactivity)! - Fix timezone parsing
+
 ## 0.1.3
 
 ### Patch Changes
