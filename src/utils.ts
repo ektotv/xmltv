@@ -1,5 +1,16 @@
 export function xmltvTimestampToUtcDate(timestamp: string) {
-  const cleanTimestamp = timestamp.replace(/[- :Zz]/g, "");
+  timestamp = timestamp.trim().replace(/[\s]/g, '');
+  let mainPart, timeZone;
+
+  if (timestamp.endsWith('Z')) {
+    mainPart = timestamp.slice(0, -1);
+    timeZone = null; // No adjustment needed for UTC
+  } else {
+    mainPart = timestamp.slice(0, -5);
+    timeZone = timestamp.slice(-5);
+  }
+
+  const cleanTimestamp = mainPart.replace(/[-:Zz]/g, '');
 
   const year = parseInt(cleanTimestamp.slice(0, 4), 10);
   const month = parseInt(cleanTimestamp.slice(4, 6), 10) - 1 || 0;
@@ -7,7 +18,6 @@ export function xmltvTimestampToUtcDate(timestamp: string) {
   const hours = parseInt(cleanTimestamp.slice(8, 10), 10) || 0;
   const minutes = parseInt(cleanTimestamp.slice(10, 12), 10) || 0;
   const seconds = parseInt(cleanTimestamp.slice(12, 14), 10) || 0;
-  const timeZone = cleanTimestamp.length > 14 ? cleanTimestamp.slice(-5) : null;
 
   const date = new Date(Date.UTC(year, month, day, hours, minutes, seconds));
 
@@ -17,9 +27,9 @@ export function xmltvTimestampToUtcDate(timestamp: string) {
     const offsetMinutes = parseInt(timeZone.slice(3, 5), 10);
     const totalOffsetMinutes = offsetHours * 60 + offsetMinutes;
 
-    if (offsetSign === "+") {
+    if (offsetSign === '+') {
       date.setUTCMinutes(date.getUTCMinutes() - totalOffsetMinutes);
-    } else if (offsetSign === "-") {
+    } else if (offsetSign === '-') {
       date.setUTCMinutes(date.getUTCMinutes() + totalOffsetMinutes);
     }
   }
