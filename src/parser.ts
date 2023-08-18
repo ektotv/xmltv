@@ -1,4 +1,5 @@
 import { XmltvDom } from './types';
+import { dateToXmltvUtcTimestamp, xmltvTimestampToUtcDate } from './utils.js';
 
 /**
  * The MIT License (MIT)
@@ -73,7 +74,7 @@ export function parser(xmltvString: string): XmltvDom {
                 '\nColumn: ' +
                 (parsedText[parsedText.length - 1].length + 1) +
                 '\nChar: ' +
-                xmltvString[pos],
+                xmltvString[pos]
             );
           }
 
@@ -207,6 +208,16 @@ export function parser(xmltvString: string): XmltvDom {
       }
     } else {
       pos++;
+    }
+
+    if (tagName === 'date') {
+      return {
+        tagName,
+        attributes,
+        children: (children as string[]).map((child: string) =>
+          dateToXmltvUtcTimestamp(xmltvTimestampToUtcDate(child))
+        ),
+      };
     }
 
     return {

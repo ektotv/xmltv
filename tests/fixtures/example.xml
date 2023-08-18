@@ -86,4 +86,19 @@
     channel="channel_one">
     <title>Programme Two: The minimum valid programme</title>
   </programme>
+  <programme start="20220331180000 +0000" stop="20220331190000 +0000" channel="channel_one">
+    <title>Programme Three: YYYYMMDD</title>
+    <desc lang="en">This programme entry showcases a programme with no credits</desc>
+    <date>20220402</date>
+  </programme>
+  <programme start="20220331180000 +0000" stop="20220331190000 +0000" channel="channel_one">
+    <title>Programme Four: YYYYMM</title>
+    <desc lang="en">This programme entry showcases a programme with no credits</desc>
+    <date>202204</date>
+  </programme>
+  <programme start="20220331180000 +0000" stop="20220331190000 +0000" channel="channel_one">
+    <title>Programme Five: YYYY</title>
+    <desc lang="en">This programme entry showcases a programme with no credits</desc>
+    <date>2022</date>
+  </programme>
 </tv>

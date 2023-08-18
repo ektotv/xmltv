@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import { describe, expect, test } from 'vitest';
 import { objectToDom, parseXmltv, writeXmltv } from '../src/main';
 
+
 const fileAsString = fs.readFileSync(`./tests/fixtures/example.xml`, {
   encoding: 'utf-8',
 });
@@ -56,5 +57,30 @@ Char: >`);
     expect(parsed).toEqual({
       channels: [{ displayName: [{ _value: 'Channel 1' }], id: '1' }],
     });
+  });
+});
+
+describe('Correctly parses ISO date substrings', () => {
+  test('Parses a date string with no timezone', () => {
+    const parsed = parseXmltv(fileAsString);
+    expect(parsed.programmes?.[0].start).toEqual(new Date('2022-03-31T18:00:00.000Z'));
+  });
+
+  test('Parses a date string with a timezone', () => {
+    const parsed = parseXmltv(fileAsString);
+    expect(parsed.programmes?.[0].stop).toEqual(new Date('2022-03-31T19:00:00.000Z'));
+  });
+
+  test('Parses a date string with just year, month, day YYYYMMDD', () => {
+    const parsed = parseXmltv(fileAsString);
+    expect(parsed.programmes?.[2].date).toEqual(new Date('2022-04-02T00:00:00.000Z'));
+  });
+  test('Parses a date string with just year and month YYYYMM', () => {
+    const parsed = parseXmltv(fileAsString);
+    expect(parsed.programmes?.[3].date).toEqual(new Date('2022-04-01T00:00:00.000Z'));
+  });
+  test('Parses a date string with just year YYYY', () => {
+    const parsed = parseXmltv(fileAsString);
+    expect(parsed.programmes?.[4].date).toEqual(new Date('2022-01-01T00:00:00.000Z'));
   });
 });
