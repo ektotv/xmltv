@@ -1,7 +1,7 @@
 {
   "name": "@iptv/xmltv",
   "description": "An extremely fast XMLTV parser and generator for Node and the browser.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "author": {
     "name": "ekto",
