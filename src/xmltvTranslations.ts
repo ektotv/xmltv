@@ -1,6 +1,6 @@
-import { reverseMap } from "./utils.js";
-import { xmltvAttributes, xmltvTags } from "./xmltvTagsAttributes.js";
-import type { XmltvTags, XmltvAttributes } from "./xmltvTagsAttributes.js";
+import { reverseMap } from './utils.js';
+import { xmltvAttributes, xmltvTags } from './xmltvTagsAttributes.js';
+import type { XmltvAttributes, XmltvTags } from './xmltvTagsAttributes.js';
 
 /**
  * The map of XMLTV strings to preferred JS strings
@@ -24,18 +24,14 @@ type XmltvAttributeTranslations = Map<XmltvAttributes, string>;
 type XmltvTagTranslationsReversed = Map<string, XmltvTags>;
 type XmltvAttributeTranslationsReversed = Map<string, XmltvAttributes>;
 
-const xmltvTagTranslations: XmltvTagTranslations = new Map([
-  ...xmltvTags.map((x) => [x, x] as [XmltvTags, string]),
-]);
+const xmltvTagTranslations: XmltvTagTranslations = new Map([...xmltvTags.map((x) => [x, x] as [XmltvTags, string])]);
 
 const xmltvAttributeTranslations: XmltvAttributeTranslations = new Map([
   ...xmltvAttributes.map((x) => [x, x] as [XmltvAttributes, string]),
 ]);
 
-const xmltvTagTranslationsReversed =
-  reverseMap<XmltvTagTranslationsReversed>(xmltvTagTranslations);
-const xmltvAttributeTranslationsReversed =
-  reverseMap<XmltvAttributeTranslationsReversed>(xmltvAttributeTranslations);
+const xmltvTagTranslationsReversed = reverseMap<XmltvTagTranslationsReversed>(xmltvTagTranslations);
+const xmltvAttributeTranslationsReversed = reverseMap<XmltvAttributeTranslationsReversed>(xmltvAttributeTranslations);
 
 /**
  * Adds or modifies a translation for a XMLTV tag
@@ -69,8 +65,7 @@ function addAttributeTranslation(key: XmltvAttributes, value: string) {
   }
 
   const map: XmltvAttributeTranslations = xmltvAttributeTranslations;
-  const reverse: XmltvAttributeTranslationsReversed =
-    xmltvAttributeTranslationsReversed;
+  const reverse: XmltvAttributeTranslationsReversed = xmltvAttributeTranslationsReversed;
 
   if (map && reverse) {
     map.set(key, value);
@@ -78,23 +73,23 @@ function addAttributeTranslation(key: XmltvAttributes, value: string) {
   }
 }
 
-addTagTranslation("display-name", "displayName");
-addTagTranslation("episode-num", "episodeNum");
-addTagTranslation("last-chance", "lastChance");
-addTagTranslation("orig-language", "origLanguage");
-addTagTranslation("previously-shown", "previouslyShown");
-addTagTranslation("star-rating", "starRating");
-addTagTranslation("sub-title", "subTitle");
-addTagTranslation("channel", "channels");
-addTagTranslation("programme", "programmes");
+addTagTranslation('display-name', 'displayName');
+addTagTranslation('episode-num', 'episodeNum');
+addTagTranslation('last-chance', 'lastChance');
+addTagTranslation('orig-language', 'origLanguage');
+addTagTranslation('previously-shown', 'previouslyShown');
+addTagTranslation('star-rating', 'starRating');
+addTagTranslation('sub-title', 'subTitle');
+addTagTranslation('channel', 'channels');
+addTagTranslation('programme', 'programmes');
 
-addAttributeTranslation("generator-info-name", "generatorInfoName");
-addAttributeTranslation("generator-info-url", "generatorInfoUrl");
-addAttributeTranslation("pdc-start", "pdcStart");
-addAttributeTranslation("vps-start", "vpsStart");
-addAttributeTranslation("source-data-url", "sourceDataUrl");
-addAttributeTranslation("source-info-name", "sourceInfoName");
-addAttributeTranslation("source-info-url", "sourceInfoUrl");
+addAttributeTranslation('generator-info-name', 'generatorInfoName');
+addAttributeTranslation('generator-info-url', 'generatorInfoUrl');
+addAttributeTranslation('pdc-start', 'pdcStart');
+addAttributeTranslation('vps-start', 'vpsStart');
+addAttributeTranslation('source-data-url', 'sourceDataUrl');
+addAttributeTranslation('source-info-name', 'sourceInfoName');
+addAttributeTranslation('source-info-url', 'sourceInfoUrl');
 
 export {
   xmltvTagTranslations,

@@ -1,6 +1,34 @@
+/**
+ * Converts an XMLTV timestamp string to a UTC Date object.
+ * @param timestamp The XMLTV timestamp string to convert.
+ * @returns A Date object representing the UTC time of the timestamp.
+ */
 export function xmltvTimestampToUtcDate(timestamp: string) {
-  timestamp = timestamp.trim().replace(/[\s]/g, '');
+  timestamp = timestamp.replace(/[\s]/g, '');
   let mainPart, timeZone;
+
+  const numberOnlyTimestamp = timestamp.replace(/\D+/g, '');
+
+  if (numberOnlyTimestamp.length <= 8) {
+    if (numberOnlyTimestamp.length === 8) {
+      const year = parseInt(numberOnlyTimestamp.slice(0, 4), 10);
+      const month = parseInt(numberOnlyTimestamp.slice(4, 6), 10) - 1 || 0;
+      const day = parseInt(numberOnlyTimestamp.slice(6, 8), 10) || 1;
+
+      return new Date(Date.UTC(year, month, day));
+    }
+
+    if (numberOnlyTimestamp.length === 6) {
+      const year = parseInt(numberOnlyTimestamp.slice(0, 4), 10);
+      const month = parseInt(numberOnlyTimestamp.slice(4, 6), 10) - 1 || 0;
+
+      return new Date(Date.UTC(year, month));
+    }
+
+    if (numberOnlyTimestamp.length === 4) {
+      return new Date(numberOnlyTimestamp);
+    }
+  }
 
   if (timestamp.endsWith('Z')) {
     mainPart = timestamp.slice(0, -1);
@@ -37,6 +65,11 @@ export function xmltvTimestampToUtcDate(timestamp: string) {
   return date;
 }
 
+/**
+ * Converts a UTC Date object to an XMLTV timestamp string.
+ * @param date The Date object to convert.
+ * @returns An XMLTV timestamp string representing the UTC time of the date.
+ */
 export function dateToXmltvUtcTimestamp(date: Date) {
   const padZeroes = (num: number) => (num < 10 ? `0${num}` : num.toString());
 
@@ -51,8 +84,10 @@ export function dateToXmltvUtcTimestamp(date: Date) {
 }
 
 /**
- * Reverses the xmltvTranslations . So that we can convert from
- * camelCase to the xmltv format.
+ * Reverses the xmltvTranslations. So that we can convert from
+ * camelCase to the XMLTV format.
+ * @param map The map to reverse.
+ * @returns A new map with the keys and values reversed.
  */
 export function reverseMap<T extends Map<any, any>>(map: Map<any, any>) {
   const reversedMap = new Map<any, any>();

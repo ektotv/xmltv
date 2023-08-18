@@ -1,10 +1,7 @@
-import type { XmltvDomNode } from "./types";
-import { dateToXmltvUtcTimestamp } from "./utils.js";
-import {
-  xmltvAttributeTranslationsReversed,
-  xmltvTagTranslationsReversed,
-} from "./xmltvTranslations.js";
-import { XmltvAttributes, xmltvAttributes } from "./xmltvTagsAttributes.js";
+import type { XmltvDomNode } from './types';
+import { dateToXmltvUtcTimestamp } from './utils.js';
+import { XmltvAttributes, xmltvAttributes } from './xmltvTagsAttributes.js';
+import { xmltvAttributeTranslationsReversed, xmltvTagTranslationsReversed } from './xmltvTranslations.js';
 
 /**
  * Converts an XMLTV object to a DOM tree
@@ -14,25 +11,25 @@ import { XmltvAttributes, xmltvAttributes } from "./xmltvTagsAttributes.js";
  * @param isArrayChild Controls if the return is an array or not
  * @returns The DOM tree
  */
-export function objectToDom(obj: any, key = "tv", isArrayChild = false): any {
+export function objectToDom(obj: any, key = 'tv', isArrayChild = false): any {
   if (Array.isArray(obj)) {
     return obj.map((item) => objectToDom(item, key, true));
   }
 
-  if (typeof obj === "number") {
+  if (typeof obj === 'number') {
     return obj.toString();
   }
 
-  if (typeof obj === "string") {
+  if (typeof obj === 'string') {
     return obj;
   }
 
-  if (obj instanceof Date && key !== "date") {
+  if (obj instanceof Date && key !== 'date') {
     return dateToXmltvUtcTimestamp(obj);
   }
 
-  if (typeof obj === "boolean" && key !== "new") {
-    return obj ? "yes" : "no";
+  if (typeof obj === 'boolean' && key !== 'new') {
+    return obj ? 'yes' : 'no';
   }
 
   const translatedTagName = xmltvTagTranslationsReversed.get(key) || key;
@@ -44,36 +41,31 @@ export function objectToDom(obj: any, key = "tv", isArrayChild = false): any {
   };
 
   for (let childKey in obj) {
-    const translatedAttributeName =
-      xmltvAttributeTranslationsReversed.get(childKey) || childKey;
+    const translatedAttributeName = xmltvAttributeTranslationsReversed.get(childKey) || childKey;
 
-    if (obj[childKey].tagName === "new") {
+    if (obj[childKey].tagName === 'new') {
       obj[translatedTagName].children = [];
       continue;
     }
 
     if (
-      (xmltvAttributes.indexOf(translatedAttributeName as XmltvAttributes) >=
-        0 &&
-        typeof obj[childKey] !== "object") ||
+      (xmltvAttributes.indexOf(translatedAttributeName as XmltvAttributes) >= 0 && typeof obj[childKey] !== 'object') ||
       obj[childKey] instanceof Date
     ) {
-      if (DomNode.tagName === "credits" && childKey === "guest") {
+      if (DomNode.tagName === 'credits' && childKey === 'guest') {
         continue;
       }
-      if (DomNode.tagName === "programme" && childKey === "channel") {
+      if (DomNode.tagName === 'programme' && childKey === 'channel') {
         DomNode.attributes[translatedAttributeName] = obj[childKey];
         continue;
       }
 
-      if (DomNode.tagName === "tv" && childKey === "date") {
-        DomNode.attributes[translatedAttributeName] = dateToXmltvUtcTimestamp(
-          obj[childKey]
-        );
+      if (DomNode.tagName === 'tv' && childKey === 'date') {
+        DomNode.attributes[translatedAttributeName] = dateToXmltvUtcTimestamp(obj[childKey]);
         continue;
       }
 
-      if (DomNode.tagName === "programme" && childKey === "date") {
+      if (DomNode.tagName === 'programme' && childKey === 'date') {
         DomNode.children.push({
           tagName: translatedAttributeName,
           attributes: {},
@@ -84,19 +76,17 @@ export function objectToDom(obj: any, key = "tv", isArrayChild = false): any {
 
       const childJsType = typeof obj[childKey];
 
-      if (childJsType === "number") {
+      if (childJsType === 'number') {
         DomNode.attributes[translatedAttributeName] = obj[childKey].toString();
         continue;
       }
 
-      if (childJsType === "boolean") {
-        DomNode.attributes[translatedAttributeName] = obj[childKey]
-          ? "yes"
-          : "no";
+      if (childJsType === 'boolean') {
+        DomNode.attributes[translatedAttributeName] = obj[childKey] ? 'yes' : 'no';
         continue;
       }
 
-      if (childJsType === "object" && !Array.isArray(obj[childKey])) {
+      if (childJsType === 'object' && !Array.isArray(obj[childKey])) {
         if (obj[childKey] instanceof Date) {
           obj[childKey] = dateToXmltvUtcTimestamp(obj[childKey]);
           DomNode.attributes[translatedAttributeName] = obj[childKey];
@@ -118,7 +108,7 @@ export function objectToDom(obj: any, key = "tv", isArrayChild = false): any {
           DomNode.children.push(childNode[i]);
         }
       } else {
-        if (childKey !== "_value") {
+        if (childKey !== '_value') {
           DomNode.children.push({
             tagName: translatedAttributeName,
             attributes: {},

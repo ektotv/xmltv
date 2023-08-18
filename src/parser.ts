@@ -1,4 +1,4 @@
-import { XmltvDom } from "./types";
+import { XmltvDom } from './types';
 
 /**
  * The MIT License (MIT)
@@ -38,20 +38,20 @@ import { XmltvDom } from "./types";
 export function parser(xmltvString: string): XmltvDom {
   let pos = 0;
 
-  const openBracket = "<";
-  const closeBracket = ">";
+  const openBracket = '<';
+  const closeBracket = '>';
   const openBracketCC = openBracket.charCodeAt(0);
   const closeBracketCC = closeBracket.charCodeAt(0);
-  const minusCC = "-".charCodeAt(0);
-  const slashCC = "/".charCodeAt(0);
-  const exclamationCC = "!".charCodeAt(0);
+  const minusCC = '-'.charCodeAt(0);
+  const slashCC = '/'.charCodeAt(0);
+  const exclamationCC = '!'.charCodeAt(0);
   const singleQuoteCC = "'".charCodeAt(0);
   const doubleQuoteCC = '"'.charCodeAt(0);
-  const openCornerBracketCC = "[".charCodeAt(0);
-  const closeCornerBracketCC = "]".charCodeAt(0);
-  const questionMarkCC = "?".charCodeAt(0);
-  const nameSpacer = "\r\n\t>/= ";
-  const noChildNodes = ["new", "icon", "previously-shown"];
+  const openCornerBracketCC = '['.charCodeAt(0);
+  const closeCornerBracketCC = ']'.charCodeAt(0);
+  const questionMarkCC = '?'.charCodeAt(0);
+  const nameSpacer = '\r\n\t>/= ';
+  const noChildNodes = ['new', 'icon', 'previously-shown'];
 
   /**
    * parsing a list of entries
@@ -66,14 +66,14 @@ export function parser(xmltvString: string): XmltvDom {
 
           const closeTag = xmltvString.substring(closeStart, pos);
           if (closeTag.indexOf(tagName) == -1) {
-            const parsedText = xmltvString.substring(0, pos).split("\n");
+            const parsedText = xmltvString.substring(0, pos).split('\n');
             throw new Error(
-              "Unexpected close tag\nLine: " +
+              'Unexpected close tag\nLine: ' +
                 (parsedText.length - 1) +
-                "\nColumn: " +
+                '\nColumn: ' +
                 (parsedText[parsedText.length - 1].length + 1) +
-                "\nChar: " +
-                xmltvString[pos]
+                '\nChar: ' +
+                xmltvString[pos],
             );
           }
 
@@ -102,17 +102,10 @@ export function parser(xmltvString: string): XmltvDom {
             const startDoctype = pos + 1;
             pos += 2;
             let encapsulated = false;
-            while (
-              (xmltvString.charCodeAt(pos) !== closeBracketCC ||
-                encapsulated === true) &&
-              xmltvString[pos]
-            ) {
+            while ((xmltvString.charCodeAt(pos) !== closeBracketCC || encapsulated === true) && xmltvString[pos]) {
               if (xmltvString.charCodeAt(pos) === openCornerBracketCC) {
                 encapsulated = true;
-              } else if (
-                encapsulated === true &&
-                xmltvString.charCodeAt(pos) === closeCornerBracketCC
-              ) {
+              } else if (encapsulated === true && xmltvString.charCodeAt(pos) === closeCornerBracketCC) {
                 encapsulated = false;
               }
               pos++;
@@ -124,7 +117,7 @@ export function parser(xmltvString: string): XmltvDom {
         }
         const node = parseNode();
         children.push(node);
-        if (node.tagName.charCodeAt(0) === questionMarkCC) {
+        if (node.tagName.charCodeAt(0) === questionMarkCC && node.children) {
           for (let i = 0, x = node.children.length; i < x; i++) {
             children.push(node.children[i]);
           }
@@ -215,6 +208,7 @@ export function parser(xmltvString: string): XmltvDom {
     } else {
       pos++;
     }
+
     return {
       tagName,
       attributes,
@@ -229,5 +223,5 @@ export function parser(xmltvString: string): XmltvDom {
     return xmltvString.slice(start, pos);
   }
 
-  return parseChildren("");
+  return parseChildren('');
 }

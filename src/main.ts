@@ -1,15 +1,14 @@
-import { parser } from "./parser.js";
-import { writer } from "./writer.js";
-import { objectToDom } from "./objectToDom.js";
-import { toObject } from "./toObject.js";
+import { objectToDom } from './objectToDom.js';
+import { parser } from './parser.js';
+import { toObject } from './toObject.js';
 import type {
   Xmltv,
   XmltvAudio,
   XmltvChannel,
   XmltvCreditImage,
   XmltvCredits,
-  XmltvDom,
   XmltvDisplayName,
+  XmltvDom,
   XmltvEpisodeNumber,
   XmltvIcon,
   XmltvImage,
@@ -23,11 +22,9 @@ import type {
   XmltvSubtitle,
   XmltvUrl,
   XmltvVideo,
-} from "./types";
-import {
-  addAttributeTranslation,
-  addTagTranslation,
-} from "./xmltvTranslations.js";
+} from './types';
+import { writer } from './writer.js';
+import { addAttributeTranslation, addTagTranslation } from './xmltvTranslations.js';
 
 type ParseXmltvOptions = {
   asDom: boolean;
@@ -46,20 +43,11 @@ type WriteXmltvOptions = {
  * @param options Options to parse the xmltv file
  * @param options.asDom If true, the xmltv file will be returned as a DOM tree
  */
-function parseXmltv(
-  xmltvString: string,
-  options: ParseXmltvOptions & { asDom: true }
-): XmltvDom;
-function parseXmltv(
-  xmltvString: string,
-  options: ParseXmltvOptions & { asDom: false }
-): XmltvDom;
+function parseXmltv(xmltvString: string, options: ParseXmltvOptions & { asDom: true }): XmltvDom;
+function parseXmltv(xmltvString: string, options: ParseXmltvOptions & { asDom: false }): XmltvDom;
 function parseXmltv(xmltvString: string): Xmltv;
 
-function parseXmltv(
-  xmltvString: string,
-  options: ParseXmltvOptions = { asDom: false }
-): Xmltv | XmltvDom {
+function parseXmltv(xmltvString: string, options: ParseXmltvOptions = { asDom: false }): Xmltv | XmltvDom {
   const parsed = parser(xmltvString);
   if (options.asDom) {
     return parsed;
@@ -79,25 +67,14 @@ function parseXmltv(
  * @returns The xmltv file content as a string
  * @throws If `options.fromDom` is true and `xmltv` is an `Xmltv` object
  */
-function writeXmltv(
-  xmltv: XmltvDom,
-  options: WriteXmltvOptions & { fromDom: true }
-): string;
-function writeXmltv(
-  xmltv: Xmltv,
-  options: WriteXmltvOptions & { fromDom: false }
-): string;
+function writeXmltv(xmltv: XmltvDom, options: WriteXmltvOptions & { fromDom: true }): string;
+function writeXmltv(xmltv: Xmltv, options: WriteXmltvOptions & { fromDom: false }): string;
 function writeXmltv(xmltv: Xmltv): string;
 
-function writeXmltv(
-  xmltv: Xmltv | XmltvDom,
-  options: WriteXmltvOptions = { fromDom: false }
-): string {
+function writeXmltv(xmltv: Xmltv | XmltvDom, options: WriteXmltvOptions = { fromDom: false }): string {
   if (options.fromDom) {
-    if (typeof xmltv === "object" && !Array.isArray(xmltv)) {
-      throw new Error(
-        "Cannot write XMLTV from a DOM object that has been converted to an object"
-      );
+    if (typeof xmltv === 'object' && !Array.isArray(xmltv)) {
+      throw new Error('Cannot write XMLTV from a DOM object that has been converted to an object');
     }
     return writer(xmltv);
   }
@@ -105,15 +82,7 @@ function writeXmltv(
   return writer(dom);
 }
 
-export {
-  parseXmltv,
-  writeXmltv,
-  writer,
-  parser,
-  objectToDom,
-  addTagTranslation,
-  addAttributeTranslation,
-};
+export { parseXmltv, writeXmltv, writer, parser, objectToDom, addTagTranslation, addAttributeTranslation };
 
 export type {
   Xmltv,

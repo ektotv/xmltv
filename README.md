@@ -58,7 +58,7 @@ yarn add @iptv/xmltv
 To use this library in your project, first import the functions you need:
 
 ```typescript
-import { parseXmltv, writeXmltv } from "@iptv/xmltv";
+import { parseXmltv, writeXmltv } from '@iptv/xmltv';
 ```
 
 Then, you can parse an XMLTV file and receive back an `Xmltv` object:
@@ -507,7 +507,7 @@ console.log(xml); // <tv>...</tv>
 If you want to go even faster you can parse the file into a DOM tree and then traverse it yourself:
 
 ```typescript
-const xml = "..."; // XMLTV file contents
+const xml = '...'; // XMLTV file contents
 const parsed = parseXmltv(xml, { asDom: true });
 // or import { parser } from '@iptv/xmltv';
 // const parsed = parser(xml);
@@ -521,16 +521,16 @@ const parsed = parseXmltv(xml, { asDom: true });
 const programmes = parsed
   .find((node) => {
     // find the <tv> tag
-    return node.tagName === "tv";
+    return node.tagName === 'tv';
   })
   .children.filter((node) => {
     // filter it's children for <programme> tags
-    return node.tagName === "programme";
+    return node.tagName === 'programme';
   })
   .map((programme) => {
     // return a Programme object for each <programme> tag
     return {
-      title: programme.children.find((t) => t.tagName === "title").children[0],
+      title: programme.children.find((t) => t.tagName === 'title').children[0],
       start: new Date(programme.attributes.start),
       stop: new Date(programme.attributes.stop),
       channel: programme.attributes.channel,
@@ -552,7 +552,7 @@ The speed of this library is down to the implementation of the XML DOM tree pars
   <img src="ludicrous.gif" />
 </picture>
 
-#### Parsing XMLTV file (example.xml)
+#### Parsing XMLTV file (c1-p1.xml)
 
 <table>
   <thead>
@@ -560,44 +560,38 @@ The speed of this library is down to the implementation of the XML DOM tree pars
         <th align="left"></th>
         <th align="left">Library</th>
         <th align="left">Ops/sec</th>
-        <th align="left">rme</th>
       </tr>
   </thead>
   <tbody>
     <tr>
       <th></th>
       <th align="left">@iptv/xmltv</th>
-      <td align="right">21,219</td>
-      <td align="right">±0.28%</td>
+      <td align="right">1,094,286</td>
     </tr>
     <tr>
       <th>🟢</th>
       <th align="left">@iptv/xmltv (DOM only)</th>
-      <td align="right">34,632</td>
-      <td align="right">±0.28%</td>
+      <td align="right">1,246,439</td>
     </tr>
     <tr>
       <th></th>
       <th align="left">fast-xml-parser</th>
-      <td align="right">6,803</td>
-      <td align="right">±0.53%</td>
+      <td align="right">426,947</td>
     </tr>
     <tr>
       <th>🔴</th>
       <th align="left">epg-parser</th>
-      <td align="right">2,321</td>
-      <td align="right">±0.42%</td>
+      <td align="right">96,468</td>
     </tr>
     <tr>
       <th></th>
       <th align="left">xmltv</th>
-      <td align="right">2,448</td>
-      <td align="right">±1.90%</td>
+      <td align="right">14,750</td>
     </tr>
 </tbody>
 </table>
 
-#### Writing XMLTV file (example.xml)
+#### Writing XMLTV file (c1-p1.xml)
 
 <table>
   <thead>
@@ -605,21 +599,18 @@ The speed of this library is down to the implementation of the XML DOM tree pars
       <th align="left"></th>
       <th align="left">Library</th>
       <th align="left">Ops/sec</th>
-      <th align="left">rme</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th align="left">🟢</th>
       <th align="left">@iptv/xmltv</th>
-      <td align="right">93,292</td>
-      <td align="right">±0.17%</td>
+      <td align="right">2,920,103</td>
     </tr>
     <tr>
       <th align="left">🔴</th>
       <th align="left">fast-xml-parser</th>
-      <td align="right">26,886</td>
-      <td align="right">±0.16%</td>
+      <td align="right">1,257,938</td>
     </tr>
   </tbody>
 </table>
@@ -655,24 +646,24 @@ The speed of this library is down to the implementation of the XML DOM tree pars
     <tr>
       <th align="left">🟢</th>
       <th align="left">@iptv/xmltv</th>
-      <td align="right">~340 μs</td>
-      <td align="right">~1.67 ms</td>
-      <td align="right">~83 ms</td>
-      <td align="right">~535 ms</td>
-      <td align="right">~1.13 s</td>
-      <td align="right">~2.41 s</td>
-      <td align="right">~5.61 s</td>
+      <td align="right">~60 μs</td>
+      <td align="right">~1.24 ms</td>
+      <td align="right">~39 ms</td>
+      <td align="right">~342 ms</td>
+      <td align="right">~980 ms</td>
+      <td align="right">~2.15 s</td>
+      <td align="right">~5.37 s</td>
     </tr>
     <tr>
       <th align="left">🔴</th>
       <th align="left">epg-parser</th>
-      <td align="right">~1.71 ms</td>
-      <td align="right">~11 ms</td>
-      <td align="right">~263 ms</td>
-      <td align="right">~2.43 s</td>
-      <td align="right">~5.7 s</td>
-      <td align="right">~12 s</td>
-      <td align="right">~29 s</td>
+      <td align="right">~362 μs</td>
+      <td align="right">~9.83 ms</td>
+      <td align="right">~256 ms</td>
+      <td align="right">~2.25 s</td>
+      <td align="right">~6.26 s</td>
+      <td align="right">~13 s</td>
+      <td align="right">~28 s</td>
     </tr>
   </tbody>
 </table>
