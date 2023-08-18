@@ -1,5 +1,11 @@
 # @iptv/xmltv
 
+## 0.1.5
+
+### Patch Changes
+
+- [#6](https://github.com/ektotv/xmltv/pull/6) [`53395c5`](https://github.com/ektotv/xmltv/commit/53395c5db06f767014d665d43977e33b392e5ad6) Thanks [@evoactivity](https://github.com/evoactivity)! - Fixes parsing of ISO date substrings (YYYY, YYYYMM, YYYYMMDD) which are valid for the programme <date> tag
+
 ## 0.1.4
 
 ### Patch Changes
