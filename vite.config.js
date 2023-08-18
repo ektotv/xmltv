@@ -1,14 +1,14 @@
 /// <reference types="vitest" />
-import { defineConfig } from "vite";
-import { resolve } from "node:path";
-import dts from "vite-plugin-dts";
+import { resolve } from 'node:path';
+import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, "src/main.ts"),
-      name: "xmltv",
-      fileName: "xmltv",
+      entry: resolve(__dirname, 'src/main.ts'),
+      name: 'xmltv',
+      fileName: 'xmltv',
     },
   },
   plugins: [
@@ -17,7 +17,5 @@ export default defineConfig({
       insertTypesEntry: true,
     }),
   ],
-  test: {
-    // ...
-  },
+  test: {},
 });

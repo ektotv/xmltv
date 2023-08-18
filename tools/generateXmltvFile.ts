@@ -1,8 +1,7 @@
 #!/usr/bin/env -S ts-node --esm
-
-import { writeXmltv } from "../src/main.js";
-import { ArgumentParser } from "argparse";
-import type { Xmltv } from "../src/types.js";
+import { ArgumentParser } from 'argparse';
+import { writeXmltv } from '../src/main.js';
+import type { Xmltv } from '../src/types.js';
 
 /**
  * Generate a xmltv file with the given number of channels and programmes
@@ -12,19 +11,18 @@ import type { Xmltv } from "../src/types.js";
  *   ./generateXml.ts --channels 100 --programmes 250000 > tests/fixtures/c100-p250_000.xml
  */
 const parser = new ArgumentParser({
-  description: "Generate xmltv xml file",
+  description: 'Generate xmltv xml file',
 });
 
-parser.add_argument("-c", "--channels", {
-  help: "Number of channels to generate",
+parser.add_argument('-c', '--channels', {
+  help: 'Number of channels to generate',
   required: true,
 });
-parser.add_argument("-p", "--programmes", {
-  help: "Number of programmes to generate",
+parser.add_argument('-p', '--programmes', {
+  help: 'Number of programmes to generate',
   required: true,
 });
-const { channels: numberOfChannels, programmes: numberOfProgrammes } =
-  parser.parse_args();
+const { channels: numberOfChannels, programmes: numberOfProgrammes } = parser.parse_args();
 
 const channelFactory = (count: number) => {
   const channels: any = [];
@@ -47,7 +45,7 @@ const programmeFactory = (count: number) => {
 
     programmes.push({
       title: `Programme ${i + 1}`,
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl nisl aliquam nisl",
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl nisl aliquam nisl',
       start: currentStartTime,
       stop: end,
       channel: `${Math.floor(Math.random() * numberOfChannels) + 1}`,
@@ -69,4 +67,4 @@ const xmltv: Xmltv = {
 
 const xml = writeXmltv(xmltv);
 
-process.stdout.write(xml + "\n");
+process.stdout.write(xml + '\n');

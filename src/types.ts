@@ -30,7 +30,7 @@ export type XmltvImage = {
   /**
    * Type of image
    */
-  type?: "poster" | "backdrop" | "still";
+  type?: 'poster' | 'backdrop' | 'still';
 
   /**
    * URL of the image
@@ -54,7 +54,7 @@ export type XmltvImage = {
    * - "L" = landscape
    * - "P" = portrait
    */
-  orient?: "L" | "P" | "l" | "p";
+  orient?: 'L' | 'P' | 'l' | 'p';
 
   /**
    * A string to describe where the image came from, eg IMDB
@@ -72,7 +72,7 @@ export type XmltvCreditImage = XmltvImage & {
   /**
    * Type of image
    */
-  type?: "person" | "character";
+  type?: 'person' | 'character';
 };
 
 /**
@@ -290,7 +290,7 @@ export type XmltvEpisodeNumber = {
    * The episode number as a standard SxxExx string.
    * This is the preferred way to specify the episode number.
    */
-  system?: "onscreen" | "xmltv_ns";
+  system?: 'onscreen' | 'xmltv_ns';
 
   /**
    * The episode number as a XMLTV episode number string eg. "2.3.2".
@@ -363,13 +363,7 @@ export type XmltvAudio = {
    * `bilingual` in this case refers to a single audio stream where the left and right
    * channels contain monophonic audio  in different langs.  Other values may be added later.
    */
-  stereo?:
-    | "mono"
-    | "stereo"
-    | "dolby"
-    | "dolby digital"
-    | "bilingual"
-    | "surround";
+  stereo?: 'mono' | 'stereo' | 'dolby' | 'dolby digital' | 'bilingual' | 'surround';
 };
 
 /**
@@ -388,7 +382,7 @@ export type XmltvLength = {
    * The units of the length
    *
    */
-  units: "seconds" | "minutes" | "hours";
+  units: 'seconds' | 'minutes' | 'hours';
 };
 
 /**
@@ -400,7 +394,7 @@ export type XmltvLength = {
  * lang for subtitles is specified in the same way as for programmes.
  */
 export type XmltvSubtitle = {
-  type?: "teletext" | "onscreen" | "deaf-signed";
+  type?: 'teletext' | 'onscreen' | 'deaf-signed';
   language?: XmltvStringWithLang;
 };
 
@@ -429,7 +423,7 @@ export type XmltvReview = {
   /**
    * The type of review
    */
-  type: "text" | "url";
+  type: 'text' | 'url';
 
   /**
    * The source of the review
