@@ -13,8 +13,14 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/xmltv.js",
-      "require": "./dist/xmltv.umd.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/xmltv.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/xmltv.umd.cjs"
+      }
     }
   },
   "publishConfig": {
