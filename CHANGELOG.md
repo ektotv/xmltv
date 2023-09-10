@@ -1,5 +1,11 @@
 # @iptv/xmltv
 
+## 0.1.6
+
+### Patch Changes
+
+- [#9](https://github.com/ektotv/xmltv/pull/9) [`6e3ed4c`](https://github.com/ektotv/xmltv/commit/6e3ed4c7abfdd4ee71bba4070c368a7c13b9e2ba) Thanks [@dank074](https://github.com/dank074)! - fix #8: update package.json exports
+
 ## 0.1.5
 
 ### Patch Changes
