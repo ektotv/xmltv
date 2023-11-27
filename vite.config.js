@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+import { copyFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
@@ -13,6 +14,13 @@ export default defineConfig({
   },
   plugins: [
     dts({
+      afterBuild: () => {
+        // To ensure the package is supported by all consumers, we must
+        // export types that are read as ESM. To do this, there must be
+        // duplicate types with the correct extension supplied in the
+        // package.json exports field.
+        copyFileSync('dist/index.d.ts', 'dist/index.d.cts');
+      },
       rollupTypes: true,
       insertTypesEntry: true,
     }),
