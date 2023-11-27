@@ -1,5 +1,13 @@
 # @iptv/xmltv
 
+## 1.0.0
+
+### Major Changes
+
+- [#11](https://github.com/ektotv/xmltv/pull/11) [`3658cc8`](https://github.com/ektotv/xmltv/commit/3658cc8b9b08a197ecf64f3815fe073c14cf4580) Thanks [@evoactivity](https://github.com/evoactivity)! - Generate a CommonJS type declaration file
+
+  We also are bumping the package to v1.0.0 as we feel it is now proven to be stable and ready for production use.
+
 ## 0.1.6
 
 ### Patch Changes
