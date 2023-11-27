@@ -1,5 +1,11 @@
 # @iptv/xmltv
 
+## 1.0.1
+
+### Patch Changes
+
+- [`4baaea3`](https://github.com/ektotv/xmltv/commit/4baaea3a67f20ea6416a3ff7ce5d4f83feadbccd) Thanks [@evoactivity](https://github.com/evoactivity)! - v1.0.0 had already been published in past and removed, cannot publish over it
+
 ## 1.0.0
 
 ### Major Changes
